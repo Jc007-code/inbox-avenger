@@ -1,0 +1,26 @@
+{
+  "name": "Inbox Avenger Adaptive Prototype",
+  "description": "A deeper Gmail Chrome extension prototype with theme controls, font settings, scan depth, and local adaptive learning.",
+  "version": "0.2.0",
+  "manifest_version": 3,
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://mail.google.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mail.google.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
