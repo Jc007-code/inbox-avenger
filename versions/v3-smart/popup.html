@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Inbox Avenger</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <div>
+        <h1>Inbox Avenger</h1>
+        <p>Message-level analysis and subscription center</p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="scanInboxBtn">Scan Inbox</button>
+      <button id="scanOpenBtn">Scan Open Email</button>
+      <button id="fullScanBtn">Full Scan</button>
+    </div>
+
+    <div class="searchBar">
+      <input id="searchInput" type="text" placeholder="Search sender, subject, snippet...">
+      <select id="categoryFilter">
+        <option value="all">All categories</option>
+        <option value="high_risk">High Risk</option>
+        <option value="medium_risk">Medium Risk</option>
+        <option value="deal">Deals</option>
+        <option value="promo">Promo</option>
+        <option value="newsletter">Newsletter</option>
+        <option value="normal">Normal</option>
+      </select>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="overview">Overview</button>
+      <button class="tab" data-tab="messages">Messages</button>
+      <button class="tab" data-tab="subscriptions">Subscriptions</button>
+    </div>
+
+    <div id="overview" class="panel active"></div>
+    <div id="messages" class="panel"></div>
+    <div id="subscriptions" class="panel"></div>
+
+    <div class="footer">
+      <button id="clearBtn" class="secondary">Clear Cache</button>
+      <span id="statusText">Ready</span>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

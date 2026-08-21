@@ -1,0 +1,32 @@
+{
+  "name": "Inbox Avenger Smart Prototype",
+  "description": "Gmail prototype with deeper inbox scanning, whole-message analysis, deal detection, and a subscription center.",
+  "version": "0.3.0",
+  "manifest_version": 3,
+  "permissions": [
+    "storage",
+    "tabs",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://mail.google.com/*"
+  ],
+  "action": {
+    "default_title": "Inbox Avenger",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mail.google.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
