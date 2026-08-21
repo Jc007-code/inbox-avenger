@@ -18,6 +18,10 @@ Inbox Avenger is a Chrome Manifest V3 extension that helps people identify suspi
 - Optional Gmail labels and high-risk notifications
 - Settings import and export
 
+## Version history
+
+The complete development progression—from the Version 1 Lite prototype through Versions 2, 3, 4, the API-ready Version 5 scaffold, and the final Version 5.1 build—is preserved in [`versions/`](versions/README.md).
+
 ## Privacy and permissions
 
 Demo Mode and pasted-email analysis run inside the extension. Settings, history, corrections, and classifier data are stored with `chrome.storage.local` on the device.
