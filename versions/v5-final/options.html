@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Inbox Avenger V5 Final Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">Inbox Avenger Version 5 Final</p>
+      <h1>Final Settings, Scanner Controls, and Word Database</h1>
+      <p class="subtitle">Demo Mode works immediately. Gmail API Mode requires replacing the OAuth client ID in manifest.json.</p>
+    </header>
+
+    <section class="card">
+      <h2>Scanner Mode</h2>
+      <div class="settingsGrid">
+        <label>
+          Mode
+          <select id="mode">
+            <option value="demo">Demo Mode - works immediately</option>
+            <option value="api">Gmail API Mode - scans real inbox after OAuth setup</option>
+          </select>
+        </label>
+        <label class="check">
+          <input id="backgroundScanEnabled" type="checkbox">
+          Enable scheduled background scans
+        </label>
+        <label>
+          Scan Interval Minutes
+          <input id="scanIntervalMinutes" type="number" min="1" max="1440">
+        </label>
+        <label>
+          Gmail Search Query
+          <input id="gmailSearchQuery" type="text">
+        </label>
+        <label>
+          Max Pages Per API Scan
+          <input id="maxPagesPerScan" type="number" min="1" max="10">
+        </label>
+        <label>
+          Max Messages Per Page
+          <input id="maxMessagesPerPage" type="number" min="1" max="100">
+        </label>
+        <label class="check">
+          <input id="applyGmailLabels" type="checkbox">
+          Apply Gmail labels automatically
+        </label>
+        <label class="check">
+          <input id="notifyOnHighRisk" type="checkbox">
+          Notify on high-risk emails
+        </label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Risk and ML Controls</h2>
+      <div class="settingsGrid">
+        <label>High Risk Threshold <input id="highRiskThreshold" type="number" min="1" max="50"></label>
+        <label>Medium Risk Threshold <input id="mediumRiskThreshold" type="number" min="1" max="50"></label>
+        <label>Useful Deal Threshold <input id="usefulDealThreshold" type="number" min="1" max="50"></label>
+        <label>Promotional Threshold <input id="promotionalThreshold" type="number" min="1" max="50"></label>
+        <label>Spam Threshold <input id="spamThreshold" type="number" min="1" max="50"></label>
+        <label>ML Weight <input id="mlWeight" type="number" min="0" max="1" step="0.05"></label>
+        <label>High Risk ML Boost <input id="highRiskMlBoost" type="number" min="0" max="20"></label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Visible Gmail Fallback Controls</h2>
+      <div class="settingsGrid">
+        <label>
+          Search Depth Mode
+          <select id="scanDepthMode">
+            <option value="light">Light - 35 visible rows</option>
+            <option value="balanced">Balanced - 80 visible rows</option>
+            <option value="deep">Deep - 200 visible rows</option>
+          </select>
+        </label>
+        <label>Max Visible Rows <input id="maxVisibleRowsToScan" type="number" min="5" max="300"></label>
+        <label class="check"><input id="showGmailBadges" type="checkbox"> Show Gmail row badges</label>
+        <label class="check"><input id="scanInboxRows" type="checkbox"> Scan visible Gmail rows</label>
+        <label class="check"><input id="scanOpenEmailBody" type="checkbox"> Scan open email body if manually added later</label>
+        <label class="check"><input id="autoSaveScanHistory" type="checkbox"> Save scan history locally</label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Customization</h2>
+      <div class="settingsGrid">
+        <label>Theme Color <input id="themeColor" type="color"></label>
+        <label>
+          Badge Style
+          <select id="badgeStyle">
+            <option value="rounded">Rounded</option>
+            <option value="square">Square</option>
+            <option value="minimal">Minimal</option>
+          </select>
+        </label>
+        <label>Font Scale <input id="fontScale" type="number" min="0.8" max="1.4" step="0.05"></label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Sender Controls</h2>
+      <div class="editor two">
+        <div class="editorCard">
+          <h3>Trusted Senders</h3>
+          <p>One email or domain per line. These reduce risk unless the email still looks highly suspicious.</p>
+          <textarea id="trustedSenders"></textarea>
+        </div>
+        <div class="editorCard">
+          <h3>Blocked Senders</h3>
+          <p>One email or domain per line. These raise risk and help flag repeat bad senders.</p>
+          <textarea id="blockedSenders"></textarea>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Category Visibility</h2>
+      <div class="visibilityGrid">
+        <label><input id="vis-highRisk" type="checkbox"> High Risk</label>
+        <label><input id="vis-mediumRisk" type="checkbox"> Medium Risk</label>
+        <label><input id="vis-spam" type="checkbox"> Spam</label>
+        <label><input id="vis-promotional" type="checkbox"> Promotional</label>
+        <label><input id="vis-usefulDeal" type="checkbox"> Useful Deal</label>
+        <label><input id="vis-transactional" type="checkbox"> Transactional</label>
+        <label><input id="vis-normal" type="checkbox"> Normal</label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Word Database</h2>
+      <p class="subtitle">Put one phrase per line. Correction learning saves extra terms into Custom Good, Custom Bad, and Custom Deal.</p>
+      <div id="databaseEditor" class="editor"></div>
+    </section>
+
+    <section class="card">
+      <h2>Import / Export</h2>
+      <div class="buttonRow">
+        <button id="exportBtn" class="secondary">Export JSON</button>
+        <button id="importBtn" class="secondary">Import JSON</button>
+      </div>
+      <textarea id="importExportBox" placeholder="Exported settings appear here. Paste JSON here before importing."></textarea>
+    </section>
+
+    <section class="card">
+      <h2>OAuth Setup Note</h2>
+      <p class="subtitle">
+        Gmail API Mode requires a real Google OAuth client ID. Replace the placeholder client_id in manifest.json,
+        reload the extension, then click Authorize Gmail API from the popup. Without that setup, use Demo Mode and visible Gmail row scan.
+      </p>
+    </section>
+
+    <div class="buttonRow sticky">
+      <button id="saveBtn">Save Everything</button>
+      <button id="resetBtn" class="danger">Reset to V5 Final Defaults</button>
+    </div>
+
+    <p id="status"></p>
+  </main>
+
+  <script src="classifier.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

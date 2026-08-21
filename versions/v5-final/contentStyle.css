@@ -1,0 +1,49 @@
+.inbox-avenger-badge {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 8px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: white;
+  background: #475569;
+  white-space: nowrap;
+  vertical-align: middle;
+  z-index: 9999;
+}
+
+.inbox-avenger-badge.ia-square {
+  border-radius: 4px;
+}
+
+.inbox-avenger-badge.ia-minimal {
+  background: transparent !important;
+  color: #111827;
+  border: 1px solid currentColor;
+}
+
+.inbox-avenger-badge.ia-high {
+  background: #991b1b;
+}
+
+.inbox-avenger-badge.ia-medium {
+  background: #92400e;
+}
+
+.inbox-avenger-badge.ia-spam {
+  background: #86198f;
+}
+
+.inbox-avenger-badge.ia-deal {
+  background: #166534;
+}
+
+.inbox-avenger-badge.ia-promo {
+  background: #1d4ed8;
+}
+
+.inbox-avenger-badge.ia-low {
+  background: #475569;
+}
