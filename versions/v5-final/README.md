@@ -121,3 +121,7 @@ By default:
 - `options.js`
 - `test-emails.txt`
 - `VERSION_NOTES.md`
+
+## Academic Documentation
+
+The original ACO 494 project paper and final status presentation are preserved in the repository’s [academic documentation archive](../../docs/academic/README.md). They document the team’s development process and the progression that led to this final Version 5 prototype.
