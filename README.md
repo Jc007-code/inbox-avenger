@@ -22,6 +22,10 @@ Inbox Avenger is a Chrome Manifest V3 extension that helps people identify suspi
 
 The complete development progression—from the Version 1 Lite prototype through Versions 2, 3, 4, the API-ready Version 5 scaffold, and the final Version 5.1 build—is preserved in [`versions/`](versions/README.md).
 
+## Documentation wiki
+
+The [`docs/`](docs/README.md) hub connects the current implementation, Version 5 notes, complete prototype history, and original ACO 494 academic documentation. The academic archive preserves the team project paper and final presentation with attribution to Jonathan Cagle, Benjamin Marshall, and Jordan Wishom.
+
 ## Privacy and permissions
 
 Demo Mode and pasted-email analysis run inside the extension. Settings, history, corrections, and classifier data are stored with `chrome.storage.local` on the device.
@@ -61,6 +65,7 @@ Never commit a production credential, exported extension settings, scan history,
 - `popup.*` — analysis, scans, results, history, and status interface
 - `options.*` — settings, word database, sender lists, and import/export
 - `manifest.json` — Chrome Manifest V3 configuration
+- `docs/` — project wiki and academic documentation
 
 ## Known limits
 
