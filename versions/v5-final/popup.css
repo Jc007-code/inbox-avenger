@@ -1,0 +1,288 @@
+body {
+  width: 460px;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111827;
+  color: #f9fafb;
+  font-size: 14px;
+}
+
+.app {
+  padding: 14px;
+}
+
+.hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #93c5fd;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+h1 {
+  margin: 2px 0 0;
+  font-size: 23px;
+}
+
+h2 {
+  font-size: 14px;
+  margin: 12px 0 7px;
+}
+
+.sub,
+.muted {
+  color: #cbd5e1;
+  margin: 5px 0 0;
+  line-height: 1.35;
+  font-size: 12px;
+}
+
+.pill {
+  background: #1f2937;
+  border: 1px solid #374151;
+  border-radius: 999px;
+  padding: 6px 8px;
+  font-size: 11px;
+  color: #d1d5db;
+  white-space: nowrap;
+}
+
+.statusCard,
+.card,
+.result {
+  background: #1f2937;
+  border: 1px solid #374151;
+  border-radius: 14px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.statusCard strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.statusCard span {
+  color: #cbd5e1;
+  font-size: 12px;
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.tab {
+  background: #1f2937;
+  border: 1px solid #374151;
+  color: #d1d5db;
+  padding: 8px 4px;
+  font-size: 12px;
+}
+
+.tab.active {
+  background: #2563eb;
+  color: white;
+}
+
+.tabPanel {
+  display: none;
+}
+
+.tabPanel.active {
+  display: block;
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 8px;
+  color: #d1d5db;
+}
+
+textarea,
+input,
+select {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #4b5563;
+  border-radius: 12px;
+  background: #111827;
+  color: #f9fafb;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+}
+
+textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.buttonRow,
+.correctionRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.buttonStack {
+  display: grid;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: #2563eb;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(1.08);
+}
+
+button.secondary {
+  background: #374151;
+}
+
+button.danger {
+  background: #7f1d1d;
+  padding: 7px 10px;
+  font-size: 12px;
+}
+
+.linkButton {
+  width: 100%;
+  background: transparent;
+  color: #93c5fd;
+  border: 1px solid #374151;
+}
+
+.hidden {
+  display: none;
+}
+
+.resultTop,
+.between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.resultLabel {
+  display: inline-flex;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 13px;
+  font-weight: bold;
+  background: #374151;
+}
+
+.resultLabel.high { background: #7f1d1d; }
+.resultLabel.medium { background: #78350f; }
+.resultLabel.spam { background: #701a75; }
+.resultLabel.promo { background: #1e3a8a; }
+.resultLabel.deal { background: #14532d; }
+.resultLabel.low { background: #334155; }
+
+#resultCategory,
+#resultExplanation {
+  color: #d1d5db;
+  line-height: 1.4;
+}
+
+.meters {
+  display: grid;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.meters div {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #d1d5db;
+}
+
+progress {
+  width: 100%;
+  height: 10px;
+}
+
+ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+li {
+  margin: 4px 0;
+  color: #e5e7eb;
+}
+
+.unsubscribeBox,
+.mlBox {
+  border: 1px dashed #475569;
+  border-radius: 12px;
+  padding: 8px;
+  color: #cbd5e1;
+  font-size: 12px;
+  word-break: break-word;
+}
+
+.historyList,
+.resultsList {
+  display: grid;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.historyItem,
+.scanItem {
+  border-top: 1px solid #374151;
+  padding-top: 8px;
+  color: #d1d5db;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.scanItem strong,
+.historyItem strong {
+  color: white;
+}
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px;
+  margin: 8px 0;
+}
+
+.summaryBox {
+  background: #111827;
+  border: 1px solid #374151;
+  border-radius: 12px;
+  padding: 8px;
+  text-align: center;
+}
+
+.summaryBox b {
+  display: block;
+  font-size: 16px;
+}
