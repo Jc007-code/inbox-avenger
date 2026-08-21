@@ -1,0 +1,26 @@
+{
+  "name": "Inbox Avenger Lite",
+  "description": "Prototype Gmail scanner that highlights and sorts risky or low-priority emails.",
+  "version": "0.1.0",
+  "manifest_version": 3,
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://mail.google.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mail.google.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
