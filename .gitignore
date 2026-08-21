@@ -1,0 +1,8 @@
+.DS_Store
+*.zip
+*.pem
+*.key
+.env
+.env.*
+settings-export*.json
+scan-history*.json

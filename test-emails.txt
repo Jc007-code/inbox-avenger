@@ -1,0 +1,47 @@
+COPY AND PASTE THESE INTO THE EXTENSION POPUP TO TEST VERSION 5 FINAL
+
+1. High Risk Phishing Test
+
+From: security-alert@fake-bank-login.com
+Subject: Urgent Action Required - Account Suspended
+
+Your account has been locked because of unusual sign-in activity. To avoid closure, click below to verify your account and update your billing information immediately. Failure to respond will result in permanent suspension.
+
+https://fake-bank-login.com/secure/verify-account
+
+2. Useful Deal Test
+
+From: deals@gamestore.com
+Subject: Price Drop + Free Shipping on Gaming Accessories
+
+Your saved item just had a price drop. Use coupon code GAME20 for 20% off and free shipping. Deal ends tonight and is valid through this weekend only.
+
+3. Promotional Test
+
+From: newsletter@shop-example.com
+Subject: New Arrivals and Member Sale
+
+You are receiving this email because you signed up for our newsletter. Shop now for new arrivals, limited time offers, reward points, and exclusive member discounts. You can unsubscribe or manage preferences at any time.
+
+https://shop-example.com/unsubscribe?id=12345
+
+4. Normal Transactional Test
+
+From: no-reply@amazon.com
+Subject: Order Confirmed
+
+Thank you for your order. Your receipt is ready and your tracking number will be sent when the package ships. Your support ticket case number is 49382.
+
+5. Attachment Risk Test
+
+From: billing@unknown-company-payments.com
+Subject: Invoice Attached
+
+Please open the attached invoice. The zip file is password protected. Enable macros if the document does not load correctly.
+
+6. Spam Test
+
+From: winner@random-promo-example.com
+Subject: Congratulations Winner
+
+Congratulations, you have been selected for a risk free opportunity. Make money fast from home with guaranteed results and no credit check.

@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Inbox Avenger - Version 5 Final",
+  "version": "5.1.0",
+  "description": "Final Version 5 prototype with rule + lightweight ML classification, background scheduled scanning, Gmail API path, DOM fallback, demo mode, history, labels, and settings.",
+  "permissions": [
+    "storage",
+    "alarms",
+    "identity",
+    "notifications",
+    "activeTab",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://mail.google.com/*",
+    "https://www.googleapis.com/*"
+  ],
+  "oauth2": {
+    "client_id": "000000000000-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/gmail.modify"
+    ]
+  },
+  "action": {
+    "default_title": "Inbox Avenger V5 Final",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["classifier.js", "contentScript.js"],
+      "css": ["contentStyle.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

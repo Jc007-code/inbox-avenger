@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Inbox Avenger V5 Final</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="app">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Inbox Avenger</p>
+        <h1>Version 5 Final</h1>
+        <p class="sub">Rule engine + lightweight ML + background scanner.</p>
+      </div>
+      <span id="modePill" class="pill">Loading</span>
+    </section>
+
+    <section class="statusCard">
+      <strong id="statusText">Loading status...</strong>
+      <span id="lastRunText"></span>
+    </section>
+
+    <section class="tabs">
+      <button class="tab active" data-tab="dashboard">Dashboard</button>
+      <button class="tab" data-tab="analyze">Analyze</button>
+      <button class="tab" data-tab="scanner">Scanner</button>
+      <button class="tab" data-tab="history">History</button>
+    </section>
+
+    <section id="tab-dashboard" class="tabPanel active">
+      <section class="card">
+        <h2>Scan Summary</h2>
+        <div id="statsGrid" class="summaryGrid"></div>
+        <div class="buttonRow">
+          <button id="runScanBtn">Run Active Scan</button>
+          <button id="demoScanBtn" class="secondary">Run Demo Scan</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Latest Results</h2>
+        <input id="resultFilter" type="text" placeholder="Search latest results...">
+        <div id="latestResults" class="resultsList"></div>
+      </section>
+    </section>
+
+    <section id="tab-analyze" class="tabPanel">
+      <section class="card">
+        <label for="emailText">Paste an email, subject line, or full message:</label>
+        <textarea id="emailText" placeholder="Paste email text here..."></textarea>
+        <div class="buttonRow">
+          <button id="analyzeBtn">Analyze Text</button>
+          <button id="clearTextBtn" class="secondary">Clear</button>
+        </div>
+      </section>
+
+      <section id="resultCard" class="result hidden">
+        <div class="resultTop">
+          <span id="resultLabel" class="resultLabel">Normal</span>
+          <span id="resultScore">Risk 0</span>
+        </div>
+        <p id="resultCategory"></p>
+        <p id="resultExplanation"></p>
+
+        <div class="meters">
+          <div><span>Risk</span><progress id="riskMeter" max="35" value="0"></progress></div>
+          <div><span>Spam</span><progress id="spamMeter" max="20" value="0"></progress></div>
+          <div><span>Promo</span><progress id="promoMeter" max="20" value="0"></progress></div>
+          <div><span>Deal</span><progress id="dealMeter" max="20" value="0"></progress></div>
+        </div>
+
+        <h2>Machine Learning Result</h2>
+        <div id="mlBox" class="mlBox"></div>
+
+        <h2>Matched Signals</h2>
+        <ul id="matchesList"></ul>
+
+        <h2>Unsubscribe Preview</h2>
+        <div id="unsubscribeBox" class="unsubscribeBox"></div>
+
+        <h2>Recommended Action</h2>
+        <ul id="actionsList"></ul>
+
+        <h2>Correction / Learning</h2>
+        <div class="correctionRow">
+          <select id="correctionSelect">
+            <option value="">Mark correct label...</option>
+            <option>High Risk</option>
+            <option>Medium Risk</option>
+            <option>Spam</option>
+            <option>Promotional</option>
+            <option>Useful Deal</option>
+            <option>Transactional</option>
+            <option>Normal</option>
+          </select>
+          <button id="saveCorrectionBtn" class="secondary">Save</button>
+        </div>
+      </section>
+    </section>
+
+    <section id="tab-scanner" class="tabPanel">
+      <section class="card">
+        <h2>Background Scanner</h2>
+        <p class="muted">Demo Mode works immediately. Gmail API Mode scans real email in the background after OAuth is configured.</p>
+
+        <div class="buttonStack">
+          <button id="authBtn">Authorize Gmail API</button>
+          <button id="visibleScanBtn" class="secondary">Scan Visible Gmail Rows</button>
+          <button id="openOptionsBtn" class="secondary">Open Full Settings</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Mode Explanation</h2>
+        <p class="muted"><strong>Demo Mode:</strong> scans built-in emails so you can demonstrate every feature.</p>
+        <p class="muted"><strong>Gmail API Mode:</strong> can scan multiple Gmail result pages beyond what is on screen, but requires replacing the placeholder OAuth client ID in manifest.json.</p>
+      </section>
+    </section>
+
+    <section id="tab-history" class="tabPanel">
+      <section class="card">
+        <div class="between">
+          <h2>History</h2>
+          <button id="clearHistoryBtn" class="danger">Clear</button>
+        </div>
+        <input id="historyFilter" type="text" placeholder="Search history...">
+        <div id="historyList" class="historyList"></div>
+      </section>
+    </section>
+
+    <footer>
+      <button id="optionsBtn" class="linkButton">Open settings and word database</button>
+    </footer>
+  </main>
+
+  <script src="classifier.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
