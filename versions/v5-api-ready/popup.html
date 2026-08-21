@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Inbox Avenger v5</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="wrap">
+    <h1>Inbox Avenger v5</h1>
+    <p class="sub">API-ready full-mailbox indexing, search, labeling scaffold, and unsubscribe center.</p>
+
+    <div class="actions">
+      <button id="syncBtn">Sync Mailbox</button>
+      <button id="refreshBtn" class="secondary">Refresh View</button>
+    </div>
+
+    <div class="searchBar">
+      <input id="searchInput" type="text" placeholder="Search indexed sender, subject, snippet, body preview...">
+      <select id="categoryFilter">
+        <option value="all">All categories</option>
+        <option value="high_risk">High Risk</option>
+        <option value="medium_risk">Medium Risk</option>
+        <option value="important">Important</option>
+        <option value="deal">Deal</option>
+        <option value="promo">Promo</option>
+        <option value="newsletter">Newsletter</option>
+        <option value="normal">Normal</option>
+      </select>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="overview">Overview</button>
+      <button class="tab" data-tab="results">Search Results</button>
+      <button class="tab" data-tab="unsubscribe">Unsubscribe Center</button>
+      <button class="tab" data-tab="labels">Labels</button>
+    </div>
+
+    <div id="overview" class="panel active"></div>
+    <div id="results" class="panel"></div>
+    <div id="unsubscribe" class="panel"></div>
+    <div id="labels" class="panel">
+      <div class="card">
+        <div class="subject">Create label scaffold</div>
+        <input id="labelName" type="text" placeholder="Example: InboxAvenger/HighRisk">
+        <button id="createLabelBtn">Create Label</button>
+      </div>
+    </div>
+
+    <div class="footer"><span id="statusText">Ready</span></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

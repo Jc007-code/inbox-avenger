@@ -1,0 +1,12 @@
+#ia5-toolbar {
+  font-family: Arial, sans-serif;
+  position: fixed; right: 18px; bottom: 18px; z-index: 999999;
+  width: 320px; background: white; border: 1px solid #d0d7de;
+  border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,.16); padding: 12px;
+}
+.ia5-title { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+.ia5-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+#ia5-toolbar button {
+  border: none; border-radius: 10px; background: #2563eb; color: white;
+  font-size: 12px; font-weight: 700; padding: 9px 11px; cursor: pointer;
+}
