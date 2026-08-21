@@ -1,0 +1,28 @@
+:root { --ia4-accent:#2563eb; --ia4-font:Arial, sans-serif; }
+#ia4-toolbar, .ia4-badge { font-family: var(--ia4-font); }
+#ia4-toolbar {
+  position: fixed; right: 18px; bottom: 18px; z-index: 999999;
+  width: 300px; background: white; border: 1px solid #d0d7de; border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.16); padding: 12px;
+}
+.ia4-title { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+.ia4-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+#ia4-toolbar button {
+  border: none; border-radius: 10px; background: var(--ia4-accent); color: white;
+  font-size: 12px; font-weight: 700; padding: 9px 11px; cursor: pointer;
+}
+.ia4-badge { display:inline-block; margin-right:8px; padding:3px 8px; border-radius:999px; font-size:11px; font-weight:700; color:#1f2937; }
+.ia4-high-risk .ia4-badge, .ia4-badge.ia4-high-risk { background:#ffd6d6; }
+.ia4-medium-risk .ia4-badge, .ia4-badge.ia4-medium-risk { background:#ffe8bf; }
+.ia4-important .ia4-badge, .ia4-badge.ia4-important { background:#dbeafe; }
+.ia4-deal .ia4-badge, .ia4-badge.ia4-deal { background:#dcfce7; }
+.ia4-promo .ia4-badge, .ia4-badge.ia4-promo { background:#e6ecff; }
+.ia4-newsletter .ia4-badge, .ia4-badge.ia4-newsletter { background:#f0e7ff; }
+.ia4-normal .ia4-badge, .ia4-badge.ia4-normal { background:#edf2f7; }
+.ia4-high-risk { outline:2px solid #ffd6d6 !important; }
+.ia4-medium-risk { outline:2px solid #ffe8bf !important; }
+.ia4-important { outline:2px solid #dbeafe !important; }
+.ia4-deal { outline:2px solid #dcfce7 !important; }
+.ia4-promo { outline:2px solid #e6ecff !important; }
+.ia4-newsletter { outline:2px solid #f0e7ff !important; }
+.ia4-normal { outline:2px solid #edf2f7 !important; }

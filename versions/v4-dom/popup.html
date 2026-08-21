@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Inbox Avenger v4</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="wrap">
+    <h1>Inbox Avenger v4</h1>
+    <p class="sub">Larger word database, triage queue, saved filters, and subscription review.</p>
+
+    <div class="actions">
+      <button id="scanInboxBtn">Scan Inbox</button>
+      <button id="scanOpenBtn">Scan Open Email</button>
+      <button id="clearBtn" class="secondary">Clear Cache</button>
+    </div>
+
+    <div class="searchBar">
+      <input id="searchInput" type="text" placeholder="Search sender, subject, snippet...">
+      <select id="categoryFilter">
+        <option value="all">All categories</option>
+        <option value="high_risk">High Risk</option>
+        <option value="medium_risk">Medium Risk</option>
+        <option value="important">Important</option>
+        <option value="deal">Deal</option>
+        <option value="promo">Promo</option>
+        <option value="newsletter">Newsletter</option>
+        <option value="normal">Normal</option>
+      </select>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="overview">Overview</button>
+      <button class="tab" data-tab="messages">Messages</button>
+      <button class="tab" data-tab="subscriptions">Subscriptions</button>
+      <button class="tab" data-tab="triage">Triage</button>
+    </div>
+
+    <div id="overview" class="panel active"></div>
+    <div id="messages" class="panel"></div>
+    <div id="subscriptions" class="panel"></div>
+    <div id="triage" class="panel"></div>
+
+    <div class="saveFilter">
+      <input id="saveFilterName" type="text" placeholder="Save current view as filter name">
+      <button id="saveFilterBtn" class="secondary">Save Filter</button>
+    </div>
+
+    <div class="footer"><span id="statusText">Ready</span></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
