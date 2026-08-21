@@ -1,0 +1,33 @@
+{
+  "name": "Inbox Avenger v5 API Ready",
+  "description": "API-ready Gmail extension with indexing, advanced search, unsubscribe center, and labeling scaffolding.",
+  "version": "0.5.0",
+  "manifest_version": 3,
+  "permissions": ["storage", "identity", "tabs", "activeTab"],
+  "host_permissions": [
+    "https://mail.google.com/*",
+    "https://www.googleapis.com/*"
+  ],
+  "oauth2": {
+    "client_id": "REPLACE_WITH_YOUR_GOOGLE_OAUTH_CLIENT_ID.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/gmail.readonly",
+      "https://www.googleapis.com/auth/gmail.modify"
+    ]
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Inbox Avenger v5",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
