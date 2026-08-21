@@ -1,0 +1,20 @@
+{
+  "name": "Inbox Avenger v4",
+  "description": "Advanced Gmail DOM prototype with larger word database, triage, saved filters, and subscription review.",
+  "version": "0.4.0",
+  "manifest_version": 3,
+  "permissions": ["storage", "tabs", "activeTab"],
+  "host_permissions": ["https://mail.google.com/*"],
+  "action": {
+    "default_title": "Inbox Avenger v4",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
